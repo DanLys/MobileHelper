@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskCardCreatorViewController" customModule="TodoList" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="NV2-0K-V6E" id="uZe-m0-c25"/>
+                <outlet property="descriptionField" destination="XKq-rF-w1m" id="mrn-HE-9UQ"/>
+                <outlet property="nameField" destination="qxc-Ph-5RK" id="o6E-UU-P9T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsd-s0-EbE">
+                    <rect key="frame" x="10" y="54" width="394" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="dWu-du-fk4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaH-f1-rPb">
+                    <rect key="frame" x="10" y="194" width="394" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="ySt-t9-Z8D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV2-0K-V6E">
+                    <rect key="frame" x="25" y="792" width="364" height="40"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Vwe-TD-5bc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="25"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="ADD"/>
+                    <connections>
+                        <action selector="addButton:" destination="-1" eventType="touchUpInside" id="haq-Td-Wqa"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qxc-Ph-5RK">
+                    <rect key="frame" x="10" y="84" width="394" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="VDn-ZU-yym"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XKq-rF-w1m">
+                    <rect key="frame" x="10" y="224" width="394" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Ecv-ee-jpv"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="NV2-0K-V6E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="9hF-E4-bcx"/>
+                <constraint firstItem="GaH-f1-rPb" firstAttribute="top" secondItem="qxc-Ph-5RK" secondAttribute="bottom" constant="10" id="B84-LH-X4g"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GaH-f1-rPb" secondAttribute="trailing" constant="10" id="G8N-Sj-OoJ"/>
+                <constraint firstItem="qxc-Ph-5RK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Jve-1w-VPM"/>
+                <constraint firstItem="qxc-Ph-5RK" firstAttribute="top" secondItem="Qsd-s0-EbE" secondAttribute="bottom" constant="5" id="OcK-t8-oqi"/>
+                <constraint firstItem="XKq-rF-w1m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="TgL-gB-Vaa"/>
+                <constraint firstItem="GaH-f1-rPb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Tjg-5R-SzC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qsd-s0-EbE" secondAttribute="trailing" constant="10" id="UEO-GF-qNc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XKq-rF-w1m" secondAttribute="trailing" constant="10" id="dmZ-Rd-YPY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NV2-0K-V6E" secondAttribute="bottom" constant="30" id="fGg-6T-fSS"/>
+                <constraint firstItem="XKq-rF-w1m" firstAttribute="top" secondItem="GaH-f1-rPb" secondAttribute="bottom" constant="5" id="hR7-AA-3xd"/>
+                <constraint firstItem="Qsd-s0-EbE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="qgL-gK-AoO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qxc-Ph-5RK" secondAttribute="trailing" constant="10" id="sot-1Y-be9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NV2-0K-V6E" secondAttribute="trailing" constant="25" id="tnk-n8-8hY"/>
+                <constraint firstItem="Qsd-s0-EbE" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="ya5-KI-Ztc"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
