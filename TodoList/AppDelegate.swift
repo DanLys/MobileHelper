@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        launchWithArguments()
+        
+        return true
+    }
+    
+    private func launchWithArguments() {
         let db = DataProvider.shared
         let arguments = CommandLine.arguments
         
@@ -28,8 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if arguments.contains("Test-with-one-task") {
             db.saveTask(task: TaskDTO(name: "Test", descriptions: "Test", date: Date.getNowDate()))
         }
-        
-        return true
     }
 
     // MARK: UISceneSession Lifecycle

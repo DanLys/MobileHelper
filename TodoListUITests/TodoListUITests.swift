@@ -93,7 +93,7 @@ class TodoListUITests: XCTestCase {
         app.launchArguments = ["Test-empty-app", "Test-with-one-task"]
         app.launch()
         
-        app.tables["TaskTable"].cells["Test:::Test:::withIndex0:0"].children(matching: .staticText).matching(identifier: "Test").element(boundBy: 0).tap()
+        app.tables["TaskTable"].cells["cell:::withIndex(0:0)"].children(matching: .staticText).matching(identifier: "Test").element(boundBy: 0).tap()
         app.textViews["NameFieldForCreator"].tap()
         
         let uKey = app.keys["U"]
@@ -135,7 +135,7 @@ class TodoListUITests: XCTestCase {
         app.launch()
         
         let cells = app.tables["TaskTable"].cells
-        cells["Test:::Test:::withIndex0:0"].swipeLeft()
+        cells["cell:::withIndex(0:0)"].swipeLeft()
         
         cells.buttons["Delete"].tap()
         XCTAssertEqual(cells.count, 1)

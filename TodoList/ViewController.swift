@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var tasksMap = [Date: [TaskDTO]]()
+    var tasksMap = SortedMap<Date, TaskDTO>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,15 +117,15 @@ class ViewController: UIViewController {
         if tasksMap[task.date] == nil {
             tasksMap[task.date] = [TaskDTO]()
             
-            section = tasksMap.distance(from: tasksMap.startIndex, to: tasksMap.index(forKey: task.date)!)
+            section = tasksMap.getIndexBy(key: task.date)
             taskTable.insertSections(IndexSet(integer: section), with: .left)
         } else {
-            section = tasksMap.distance(from: tasksMap.startIndex, to: tasksMap.index(forKey: task.date)!)
+            section = tasksMap.getIndexBy(key: task.date)
         }
         
         tasksMap[task.date]!.append(task)
         
-        taskTable.insertRows(at: [IndexPath(row: getBySection(section: section).count - 1, section: section)], with: .left)
+        taskTable.insertRows(at: [IndexPath(row: tasksMap[section]!.count - 1, section: section)], with: .left)
         taskTable.endUpdates()
         
         saveTask(task: task)
@@ -138,19 +138,9 @@ class ViewController: UIViewController {
             - task: *TaskDTO* представление задачи
     */
     func updateTask(task: TaskDTO, indexPath: IndexPath) {
-        updateTask(oldTask: getBySection(indexPath: indexPath)[indexPath.row], newTask: task)
+        updateTask(oldTask: tasksMap[indexPath.section]![indexPath.row], newTask: task)
         
         taskTable.reloadData()
-    }
-    
-    private func getBySection(indexPath: IndexPath? = nil, section: Int? = nil) -> [TaskDTO] {
-        if let indexPath = indexPath {
-            return tasksMap.values[tasksMap.index(tasksMap.startIndex, offsetBy: indexPath.section)]
-        } else if let section = section {
-            return tasksMap.values[tasksMap.index(tasksMap.startIndex, offsetBy: section)]
-        }
-        
-        return [TaskDTO]()
     }
 }
 
@@ -162,7 +152,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        getBySection(section: section).count
+        tasksMap[section]!.count
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -174,10 +164,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.name.text = getBySection(indexPath: indexPath)[indexPath.row].name
-        cell.descriptions.text = getBySection(indexPath: indexPath)[indexPath.row].descriptions
+        cell.name.text = tasksMap[indexPath.section]![indexPath.row].name
+        cell.descriptions.text = tasksMap[indexPath.section]![indexPath.row].descriptions
         
-        cell.accessibilityIdentifier = "\(cell.name.text ?? ""):::\(cell.descriptions.text ?? ""):::withIndex\(indexPath.row):\(indexPath.section)"
+        cell.accessibilityIdentifier = "cell:::withIndex(\(indexPath.row):\(indexPath.section))"
         
         cell.selectionStyle = .none
         
@@ -193,8 +183,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         vc.modalPresentationStyle = .pageSheet
         
         present(vc, animated: true) {
-            vc.nameField.text = self.getBySection(indexPath: indexPath)[indexPath.row].name
-            vc.descriptionField.text = self.getBySection(indexPath: indexPath)[indexPath.row].descriptions
+            vc.nameField.text = self.tasksMap[indexPath.section]![indexPath.row].name
+            vc.descriptionField.text = self.tasksMap[indexPath.section]![indexPath.row].descriptions
         }
     }
     
@@ -209,7 +199,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .left
-        label.text = getBySection(section: section)[0].date.showDate()
+        label.text = tasksMap[section]![0].date.showDate()
         
         label.sizeToFit()
         
@@ -220,8 +210,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            let date = getBySection(indexPath: indexPath)[indexPath.row].date
-            deleteTask(task: getBySection(indexPath: indexPath)[indexPath.row])
+            let date = tasksMap[indexPath.section]![indexPath.row].date
+            deleteTask(task: tasksMap[indexPath.section]![indexPath.row])
             tasksMap[date]?.remove(at: indexPath.row)
             
             taskTable.beginUpdates()

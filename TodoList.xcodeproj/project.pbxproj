@@ -25,6 +25,7 @@
 		3C4C69EB2795CAE600A96CBD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69EA2795CAE600A96CBD /* Date.swift */; };
 		3C4C69ED279C3DE400A96CBD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69EC279C3DE400A96CBD /* StringExtension.swift */; };
 		3C4C69EF279D680600A96CBD /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69EE279D680600A96CBD /* ViewControllerTests.swift */; };
+		3C4C69F2279EACF100A96CBD /* SortedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69F1279EACF000A96CBD /* SortedMap.swift */; };
 		481CDB80280D1569543A2C45 /* libPods-TodoList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B757A7F6D6CE5F966F465D6 /* libPods-TodoList.a */; };
 		57B7FDF24F19567893158A3A /* libPods-TodoListUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A516DB9EDF401B1DBFAD0335 /* libPods-TodoListUITests.a */; };
 		D8054B174C0E40717725151E /* libPods-TodoListTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7976D174509B7880F606F9FE /* libPods-TodoListTests.a */; };
@@ -71,6 +72,7 @@
 		3C4C69EA2795CAE600A96CBD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3C4C69EC279C3DE400A96CBD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		3C4C69EE279D680600A96CBD /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		3C4C69F1279EACF000A96CBD /* SortedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedMap.swift; sourceTree = "<group>"; };
 		7976D174509B7880F606F9FE /* libPods-TodoListTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TodoListTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F52E7E5491AF06372DAC42B /* Pods-TodoListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListUITests.debug.xcconfig"; path = "Target Support Files/Pods-TodoListUITests/Pods-TodoListUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		831D0645DB7CE1E366345D09 /* Pods-TodoListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListTests.debug.xcconfig"; path = "Target Support Files/Pods-TodoListTests/Pods-TodoListTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		3C00AB8F27479626009236CA /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				3C4C69F0279EACDB00A96CBD /* Utils */,
 				3C4C69E42792E5B800A96CBD /* DataBase */,
 				3C00AB9027479626009236CA /* AppDelegate.swift */,
 				3C00AB9227479626009236CA /* SceneDelegate.swift */,
@@ -177,6 +180,14 @@
 				3C4C69E52792E60E00A96CBD /* DataProvider.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		3C4C69F0279EACDB00A96CBD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3C4C69F1279EACF000A96CBD /* SortedMap.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		935510F0BB8E7AC434DD9DC5 /* Pods */ = {
@@ -406,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4C69F2279EACF100A96CBD /* SortedMap.swift in Sources */,
 				3C4C69ED279C3DE400A96CBD /* StringExtension.swift in Sources */,
 				3C00AB9527479626009236CA /* ViewController.swift in Sources */,
 				3C00AB9127479626009236CA /* AppDelegate.swift in Sources */,
