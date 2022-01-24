@@ -5,13 +5,27 @@
 //  Created by Danil Lyskin on 24.01.2022.
 //
 
-import Foundation
-import SwiftUI
-
+/**
+    Класс реализующий отсортированный словарь, хранящий массив
+    
+    - Parameters:
+        - Key: *Comparable* тип ключа
+        - Value: Тип хранимого элемента
+ 
+    - count:  *Int* количество элементов
+*/
 class SortedMap<Key: Comparable, Value> {
-    var arr = [(key: Key, value: [Value])]()
+    private var arr = [(key: Key, value: [Value])]()
     var count: Int = 0
     
+    /**
+        Поиск массива по ключу
+     
+        - Returns:
+            *Int* индекс, где ключ меньше, либо равен искомому
+        
+        Complexity: O(logN)
+     */
     private func lowerBound(key: Key) -> Int {
         guard arr.count > 0 else {
             return 0
@@ -37,10 +51,29 @@ class SortedMap<Key: Comparable, Value> {
         return left
     }
     
+    /**
+        Проверка на наличие ключа по индексу
+     
+        - Parameters:
+            - index: *Int* индекс
+            - key: *Key* ключ
+        
+        - Returns:
+            *Bool* результат проверки
+     */
     private func check(index: Int, and key: Key) -> Bool {
         index < count && arr[index].key == key
     }
     
+    /**
+        Получение значения по ключу
+     
+        - Parameters:
+            - key: *Key* ключ
+     
+        - Returns:
+            *[Value]?* значение
+     */
     private func getBy(key: Key) -> [Value]? {
         let index = lowerBound(key: key)
         
@@ -51,6 +84,12 @@ class SortedMap<Key: Comparable, Value> {
         return nil
     }
     
+    /**
+        Удаление значения по ключу
+     
+        - Parameters:
+            - key: *Key* ключ
+     */
     private func removeBy(key: Key) {
         let index = lowerBound(key: key)
         
@@ -60,6 +99,13 @@ class SortedMap<Key: Comparable, Value> {
         }
     }
     
+    /**
+        Добавление значения по ключу
+     
+        - Parameters:
+            - key: *Key* ключ
+            - value: *[Value]?* значение
+     */
     private func addBy(key: Key, and value: [Value]?) {
         guard let value = value else {
             removeBy(key: key)
@@ -76,6 +122,15 @@ class SortedMap<Key: Comparable, Value> {
         }
     }
     
+    /**
+        Взятие индекса по ключу
+     
+        - Parameters:
+            - key: *Key* ключ
+     
+        - Returns:
+            *Int* индекс, если такого ключа нет, то возвращается -индекс элемента с ключем меньшим, либо равным
+     */
     func getIndexBy(key: Key) -> Int {
         let index = lowerBound(key: key)
         
