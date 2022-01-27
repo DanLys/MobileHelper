@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  TodoList
+
+  Created by Danil Lyskin on 27.01.2022.
+  
+*/
+"description" = "Описание:";
+"name" = "Название:";
+"add" = "Добавить";
+"update" = "Обновить";

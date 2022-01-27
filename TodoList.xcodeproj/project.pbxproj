@@ -20,7 +20,8 @@
 		3C00ABC4274799F3009236CA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00ABC3274799F2009236CA /* Task.swift */; };
 		3C00ABC627479ABC009236CA /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00ABC527479ABC009236CA /* CustomCell.swift */; };
 		3C00ABC927479CF0009236CA /* TaskCardCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00ABC727479CF0009236CA /* TaskCardCreatorViewController.swift */; };
-		3C00ABCA27479CF0009236CA /* TaskCardCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C00ABC827479CF0009236CA /* TaskCardCreatorViewController.xib */; };
+		3C3BC77527A3365B0039223C /* TaskCardCreatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3BC77727A3365B0039223C /* TaskCardCreatorViewController.xib */; };
+		3C3BC77E27A3394C0039223C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C3BC78027A3394C0039223C /* Localizable.strings */; };
 		3C4C69E62792E60E00A96CBD /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69E52792E60E00A96CBD /* DataProvider.swift */; };
 		3C4C69EB2795CAE600A96CBD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69EA2795CAE600A96CBD /* Date.swift */; };
 		3C4C69ED279C3DE400A96CBD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C69EC279C3DE400A96CBD /* StringExtension.swift */; };
@@ -67,7 +68,9 @@
 		3C00ABC3274799F2009236CA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3C00ABC527479ABC009236CA /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		3C00ABC727479CF0009236CA /* TaskCardCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardCreatorViewController.swift; sourceTree = "<group>"; };
-		3C00ABC827479CF0009236CA /* TaskCardCreatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCardCreatorViewController.xib; sourceTree = "<group>"; };
+		3C3BC77627A3365B0039223C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TaskCardCreatorViewController.xib; sourceTree = "<group>"; };
+		3C3BC77F27A3394C0039223C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3C3BC78127A3394D0039223C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3C4C69E52792E60E00A96CBD /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		3C4C69EA2795CAE600A96CBD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3C4C69EC279C3DE400A96CBD /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 		3C00AB8F27479626009236CA /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
+				3C3BC75F27A322580039223C /* Resources */,
 				3C4C69F0279EACDB00A96CBD /* Utils */,
 				3C4C69E42792E5B800A96CBD /* DataBase */,
 				3C00AB9027479626009236CA /* AppDelegate.swift */,
@@ -149,9 +153,7 @@
 				3C00ABC3274799F2009236CA /* Task.swift */,
 				3C00ABC527479ABC009236CA /* CustomCell.swift */,
 				3C00ABC727479CF0009236CA /* TaskCardCreatorViewController.swift */,
-				3C00ABC827479CF0009236CA /* TaskCardCreatorViewController.xib */,
-				3C4C69EA2795CAE600A96CBD /* Date.swift */,
-				3C4C69EC279C3DE400A96CBD /* StringExtension.swift */,
+				3C3BC77727A3365B0039223C /* TaskCardCreatorViewController.xib */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -174,6 +176,14 @@
 			path = TodoListUITests;
 			sourceTree = "<group>";
 		};
+		3C3BC75F27A322580039223C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C3BC78027A3394C0039223C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3C4C69E42792E5B800A96CBD /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,8 @@
 		3C4C69F0279EACDB00A96CBD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3C4C69EC279C3DE400A96CBD /* StringExtension.swift */,
+				3C4C69EA2795CAE600A96CBD /* Date.swift */,
 				3C4C69F1279EACF000A96CBD /* SortedMap.swift */,
 			);
 			path = Utils;
@@ -302,6 +314,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 3C00AB8427479626009236CA;
 			productRefGroup = 3C00AB8E27479626009236CA /* Products */;
@@ -322,8 +335,9 @@
 			files = (
 				3C00ABA02747962A009236CA /* LaunchScreen.storyboard in Resources */,
 				3C00AB9D2747962A009236CA /* Assets.xcassets in Resources */,
-				3C00ABCA27479CF0009236CA /* TaskCardCreatorViewController.xib in Resources */,
+				3C3BC77E27A3394C0039223C /* Localizable.strings in Resources */,
 				3C00AB9827479626009236CA /* Main.storyboard in Resources */,
+				3C3BC77527A3365B0039223C /* TaskCardCreatorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +495,23 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		3C3BC77727A3365B0039223C /* TaskCardCreatorViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C3BC77627A3365B0039223C /* Base */,
+			);
+			name = TaskCardCreatorViewController.xib;
+			sourceTree = "<group>";
+		};
+		3C3BC78027A3394C0039223C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C3BC77F27A3394C0039223C /* en */,
+				3C3BC78127A3394D0039223C /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -488,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -549,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

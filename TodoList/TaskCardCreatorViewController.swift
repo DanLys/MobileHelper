@@ -10,6 +10,8 @@ import UIKit
 /**
      Контроллер для отображания окна создания и обновления задачи
      
+     - nameLabel: *UILabel* название поля над полем для ввода названия задачи
+     - descriptionsLabel: *UILabel* название поля над полем для ввода описания задачи
      - nameField: *UITextView* отображение поля для ввода имени задачи
      - descriptionField: *UITextView* отображение поля для ввода описания задачи
      - addButton: *UIButton* кнопка для сохранения задачи
@@ -19,6 +21,17 @@ import UIKit
  */
 class TaskCardCreatorViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel! {
+        didSet {
+            nameLabel.text = "name".localized
+        }
+    }
+    @IBOutlet weak var descriptionsLabel: UILabel! {
+        didSet {
+            descriptionsLabel.text = "description".localized
+        }
+    }
+    
     @IBOutlet weak var nameField: UITextView! {
         didSet {
             nameField.accessibilityIdentifier = "NameFieldForCreator"
@@ -35,11 +48,11 @@ class TaskCardCreatorViewController: UIViewController {
             addButton.layer.cornerRadius = 15
             
             if flag {
-                addButton.setTitle("UPDATE", for: .normal)
-                addButton.setTitle("UPDATE", for: .selected)
+                addButton.setTitle("update".localized, for: .normal)
+                addButton.setTitle("update".localized, for: .selected)
             } else {
-                addButton.setTitle("ADD", for: .normal)
-                addButton.setTitle("ADD", for: .selected)
+                addButton.setTitle("add".localized, for: .normal)
+                addButton.setTitle("add".localized, for: .selected)
             }
             
             addButton.titleLabel?.font = UIFont(name: "Rockwell-Bold", size: 25)

@@ -35,4 +35,8 @@ extension String {
         
         return str
     }
+    
+    var localized: String {
+        NSLocalizedString(self, comment: "")
+    }
 }

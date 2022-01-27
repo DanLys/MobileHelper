@@ -57,7 +57,7 @@ class TodoListUITests: XCTestCase {
         kKey.tap()
         
         app.staticTexts["Description:"].tap()
-        app/*@START_MENU_TOKEN@*/.staticTexts["ADD"]/*[[".buttons[\"ADD\"].staticTexts[\"ADD\"]",".buttons[\"AddButton\"].staticTexts[\"ADD\"]",".staticTexts[\"ADD\"]"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.staticTexts["Add"].tap()
         plusbuttonButton.tap()
         namefieldforcreatorTextView.tap()
         

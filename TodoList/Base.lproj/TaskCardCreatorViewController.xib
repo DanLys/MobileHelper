@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="addButton" destination="NV2-0K-V6E" id="uZe-m0-c25"/>
                 <outlet property="descriptionField" destination="XKq-rF-w1m" id="mrn-HE-9UQ"/>
+                <outlet property="descriptionsLabel" destination="GaH-f1-rPb" id="gFA-a6-QC2"/>
                 <outlet property="nameField" destination="qxc-Ph-5RK" id="o6E-UU-P9T"/>
+                <outlet property="nameLabel" destination="Qsd-s0-EbE" id="hsd-Sv-0cs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
