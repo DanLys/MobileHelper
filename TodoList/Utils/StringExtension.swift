@@ -36,6 +36,9 @@ extension String {
         return str
     }
     
+    /**
+        Локализированная строка
+     */
     var localized: String {
         NSLocalizedString(self, comment: "")
     }
