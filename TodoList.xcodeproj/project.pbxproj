@@ -11,7 +11,6 @@
 		3C00AB9327479626009236CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00AB9227479626009236CA /* SceneDelegate.swift */; };
 		3C00AB9527479626009236CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00AB9427479626009236CA /* ViewController.swift */; };
 		3C00AB9827479626009236CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C00AB9627479626009236CA /* Main.storyboard */; };
-		3C00AB9B27479626009236CA /* TodoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C00AB9927479626009236CA /* TodoList.xcdatamodeld */; };
 		3C00AB9D2747962A009236CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C00AB9C2747962A009236CA /* Assets.xcassets */; };
 		3C00ABA02747962A009236CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C00AB9E2747962A009236CA /* LaunchScreen.storyboard */; };
 		3C00ABAB2747962B009236CA /* TaskCardCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C00ABAA2747962B009236CA /* TaskCardCreatorTests.swift */; };
@@ -56,7 +55,6 @@
 		3C00AB9227479626009236CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3C00AB9427479626009236CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C00AB9727479626009236CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C00AB9A27479626009236CA /* TodoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoList.xcdatamodel; sourceTree = "<group>"; };
 		3C00AB9C2747962A009236CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C00AB9F2747962A009236CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C00ABA12747962A009236CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				3C00AB9C2747962A009236CA /* Assets.xcassets */,
 				3C00AB9E2747962A009236CA /* LaunchScreen.storyboard */,
 				3C00ABA12747962A009236CA /* Info.plist */,
-				3C00AB9927479626009236CA /* TodoList.xcdatamodeld */,
 				3C00ABC3274799F2009236CA /* Task.swift */,
 				3C00ABC527479ABC009236CA /* CustomCell.swift */,
 				3C00ABC727479CF0009236CA /* TaskCardCreatorViewController.swift */,
@@ -441,7 +438,6 @@
 				3C4C69E62792E60E00A96CBD /* DataProvider.swift in Sources */,
 				3C00ABC927479CF0009236CA /* TaskCardCreatorViewController.swift in Sources */,
 				3C4C69EB2795CAE600A96CBD /* Date.swift in Sources */,
-				3C00AB9B27479626009236CA /* TodoList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +646,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,7 +677,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -839,19 +835,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3C00AB9927479626009236CA /* TodoList.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3C00AB9A27479626009236CA /* TodoList.xcdatamodel */,
-			);
-			currentVersion = 3C00AB9A27479626009236CA /* TodoList.xcdatamodel */;
-			path = TodoList.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3C00AB8527479626009236CA /* Project object */;
 }
