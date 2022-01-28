@@ -122,7 +122,6 @@ class ViewController: UIViewController {
         } else {
             section = tasksMap.getIndexBy(key: task.date)
         }
-        
         tasksMap[task.date]!.append(task)
         
         taskTable.insertRows(at: [IndexPath(row: tasksMap[section]!.count - 1, section: section)], with: .left)

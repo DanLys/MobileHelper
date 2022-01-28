@@ -116,8 +116,11 @@ class SortedMap<Key: Comparable, Value> {
         
         if check(index: index, and: key) {
             arr[index].value = value
+        } else if index == 0 && count != 0 && arr[index].key > key {
+            arr.insert((key: key, value: value), at: index)
+            count += 1
         } else {
-            arr.insert((key: key, value: value), at: index != 0 ? index + 1 : index)
+            arr.insert((key: key, value: value), at: count != 0 ? index + 1 : index)
             count += 1
         }
     }

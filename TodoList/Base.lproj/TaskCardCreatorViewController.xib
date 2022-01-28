@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskCardCreatorViewController" customModule="TodoList" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="NV2-0K-V6E" id="uZe-m0-c25"/>
+                <outlet property="datePicker" destination="0hP-QX-OpV" id="jAy-9s-2cA"/>
                 <outlet property="descriptionField" destination="XKq-rF-w1m" id="mrn-HE-9UQ"/>
                 <outlet property="descriptionsLabel" destination="GaH-f1-rPb" id="gFA-a6-QC2"/>
                 <outlet property="nameField" destination="qxc-Ph-5RK" id="o6E-UU-P9T"/>
@@ -34,7 +35,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaH-f1-rPb">
-                    <rect key="frame" x="10" y="194" width="394" height="25"/>
+                    <rect key="frame" x="10" y="164" width="394" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="ySt-t9-Z8D"/>
                     </constraints>
@@ -57,17 +58,17 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qxc-Ph-5RK">
-                    <rect key="frame" x="10" y="84" width="394" height="100"/>
+                    <rect key="frame" x="10" y="84" width="394" height="70"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="VDn-ZU-yym"/>
+                        <constraint firstAttribute="height" constant="70" id="VDn-ZU-yym"/>
                     </constraints>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XKq-rF-w1m">
-                    <rect key="frame" x="10" y="224" width="394" height="200"/>
+                    <rect key="frame" x="10" y="194" width="394" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="Ecv-ee-jpv"/>
@@ -76,6 +77,13 @@
                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="0hP-QX-OpV">
+                    <rect key="frame" x="82" y="564" width="250" height="108"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="108" id="NYN-oS-442"/>
+                        <constraint firstAttribute="width" constant="250" id="k0B-WN-BmG"/>
+                    </constraints>
+                </datePicker>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,7 +98,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qsd-s0-EbE" secondAttribute="trailing" constant="10" id="UEO-GF-qNc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XKq-rF-w1m" secondAttribute="trailing" constant="10" id="dmZ-Rd-YPY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NV2-0K-V6E" secondAttribute="bottom" constant="30" id="fGg-6T-fSS"/>
+                <constraint firstItem="NV2-0K-V6E" firstAttribute="top" secondItem="0hP-QX-OpV" secondAttribute="bottom" constant="120" id="ghY-u3-Tj9"/>
                 <constraint firstItem="XKq-rF-w1m" firstAttribute="top" secondItem="GaH-f1-rPb" secondAttribute="bottom" constant="5" id="hR7-AA-3xd"/>
+                <constraint firstItem="0hP-QX-OpV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XKq-rF-w1m" secondAttribute="bottom" constant="40" id="iAK-4h-ufV"/>
+                <constraint firstItem="0hP-QX-OpV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k0R-aE-wB3"/>
                 <constraint firstItem="Qsd-s0-EbE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="qgL-gK-AoO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qxc-Ph-5RK" secondAttribute="trailing" constant="10" id="sot-1Y-be9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NV2-0K-V6E" secondAttribute="trailing" constant="25" id="tnk-n8-8hY"/>

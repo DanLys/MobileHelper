@@ -10,6 +10,7 @@ import UIKit
 /**
      Контроллер для отображания окна создания и обновления задачи
      
+     - datePicker: *UIDatePicker* поле для выбора даты задачи
      - nameLabel: *UILabel* название поля над полем для ввода названия задачи
      - descriptionsLabel: *UILabel* название поля над полем для ввода описания задачи
      - nameField: *UITextView* отображение поля для ввода имени задачи
@@ -21,6 +22,11 @@ import UIKit
  */
 class TaskCardCreatorViewController: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker! {
+        didSet {
+            datePicker.accessibilityIdentifier = "datePicker"
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.text = "name".localized
@@ -90,7 +96,7 @@ class TaskCardCreatorViewController: UIViewController {
             return
         }
         
-        let task = TaskDTO(name: nameField.text ?? "", descriptions: descriptionField.text ?? "", date: Date.getNowDate())
+        let task = TaskDTO(name: nameField.text ?? "", descriptions: descriptionField.text ?? "", date: datePicker.date.getDateWithFormatter())
 
         if flag {
             delegate?.updateTask(task: task, indexPath: index)
