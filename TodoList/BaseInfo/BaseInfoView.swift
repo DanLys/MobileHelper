@@ -8,17 +8,44 @@
 import Charts
 import UIKit
 
+/**
+    Протокол делегата для *BaseInfoView*
+ 
+    - *getInfo() -> PieChartData* получение данных для заполнения диаграммы
+    - *openSettings* функция для открытия настроек
+ */
 @objc
 protocol BaseInfoViewDelegate where Self: UIViewController {
+    /**
+        Получение данных для заполнения диаграммы
+     */
     func getInfo() -> PieChartData?
     
+    /**
+        Функция для открытия настроек
+     */
     @objc
     func openSettings()
 }
 
+/**
+    Элементы экрана с информацией
+ 
+    - chart: *PieChartView* диаграмма
+    - settingsButton: *UIButton* кнопка для открытия настроек
+    - batteryStateLabel: *UILabel* текст с количеством заряда телефона
+    - delegate: *BaseInfoViewDelegate* делегат
+ */
 class BaseInfoView: UIView {
     
+    /**
+        Диаграмма
+     */
     let chart = PieChartView()
+    
+    /**
+         Кнопка для открытия настроек
+     */
     let settingsButton: UIButton = {
         let res = UIButton()
         
@@ -37,6 +64,10 @@ class BaseInfoView: UIView {
         
         return res
     }()
+    
+    /**
+        Текст с количеством заряда телефона
+     */
     let batteryStateLabel: UILabel = {
         let res = UILabel()
         
@@ -53,6 +84,9 @@ class BaseInfoView: UIView {
         return res
     }()
     
+    /**
+        Делегат
+     */
     weak var delegate: BaseInfoViewDelegate?
     
     override func layoutSubviews() {
@@ -87,6 +121,10 @@ class BaseInfoView: UIView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateBatteryLevel), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
     }
+    
+    /**
+        Обновление значения заряда в *batteryStateLabel*
+     */
     @objc
     func updateBatteryLevel() {
         DispatchQueue.main.async { [self] in
@@ -98,6 +136,9 @@ class BaseInfoView: UIView {
         }
     }
     
+    /**
+        Добавление констрейинтов элементам
+     */
     private func addConstraints() {
         chart.heightAnchor.constraint(equalToConstant: 300).isActive = true
         

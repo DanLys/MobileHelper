@@ -7,6 +7,11 @@
 
 import UIKit
 
+/**
+    Контроллер, отвечающий за загрузку tabBar'а
+ 
+    - tabBar: *UITabBarController* tabBar
+ */
 class StartViewController: UIViewController {
     
     let tabBar = UITabBarController()
@@ -17,6 +22,9 @@ class StartViewController: UIViewController {
         tab()
     }
     
+    /**
+        Добавление tabBar контроллера
+     */
     private func tab() {
         let vc1 = BaseInfoViewController()
         let vc2 = TodoViewController()

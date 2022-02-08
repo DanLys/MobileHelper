@@ -8,9 +8,17 @@
 import UIKit
 import Charts
 
+/**
+    Контроллер, отвечающий за экран с информацией
+    
+    - pieChartData: *PieChartData* данные для заполнение диаграммы
+ */
 class BaseInfoViewController: UIViewController {
     
-    var pieCharData: PieChartData?
+    /**
+        Данные для заполнение диаграммы
+     */
+    var pieChartData: PieChartData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +40,7 @@ class BaseInfoViewController: UIViewController {
         let chartDataSet = PieChartDataSet(entries: chartDataEntries, label: nil)
         chartDataSet.colors = [UIColor.brown, UIColor.systemGray4]
         
-        pieCharData = PieChartData(dataSet: chartDataSet)
+        pieChartData = PieChartData(dataSet: chartDataSet)
         
         let baseInfoView = BaseInfoView(frame: view.frame)
         baseInfoView.delegate = self
@@ -40,6 +48,12 @@ class BaseInfoViewController: UIViewController {
         view.addSubview(baseInfoView)
     }
     
+    /**
+        Получение информации о памяти устройства
+     
+        - Returns:
+            *[(name: String, value: Double)]* массив значений о памяти по категориям
+     */
     private func getStorageStatistics() -> [(name: String, value: Double)] {
         var storage = [(name: String, value: Double)]()
         
@@ -60,9 +74,10 @@ class BaseInfoViewController: UIViewController {
     }
 }
 
+//MARK: расширения
 extension BaseInfoViewController: BaseInfoViewDelegate {
     func getInfo() -> PieChartData? {
-        pieCharData
+        pieChartData
     }
     
     @objc

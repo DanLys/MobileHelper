@@ -8,6 +8,13 @@
 import Foundation
 
 extension Double {
+    
+    /**
+        Переводит байты в гигабаты
+     
+        - Returns:
+            *Double* количество гигабайтов
+     */
     mutating func convertByteToGb() -> Double {
         self = self / 1024 / 1024 / 1024
         

@@ -22,32 +22,49 @@ import UIKit
  */
 class TaskCardCreatorViewController: UIViewController {
 
+    /**
+        Поле для выбора даты задачи
+     */
     @IBOutlet weak var datePicker: UIDatePicker! {
         didSet {
             datePicker.accessibilityIdentifier = "datePicker"
         }
     }
+    /**
+        Название поля над полем для ввода названия задачи
+     */
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
             nameLabel.text = "name".localized
         }
     }
+    /**
+        Название поля над полем для ввода описания задачи
+     */
     @IBOutlet weak var descriptionsLabel: UILabel! {
         didSet {
             descriptionsLabel.text = "description".localized
         }
     }
-    
+    /**
+        Отображение поля для ввода имени задачи
+     */
     @IBOutlet weak var nameField: UITextView! {
         didSet {
             nameField.accessibilityIdentifier = "NameFieldForCreator"
         }
     }
+    /**
+        Отображение поля для ввода описания задачи
+     */
     @IBOutlet weak var descriptionField: UITextView! {
         didSet {
             descriptionField.accessibilityIdentifier = "DescriptionFieldForCreator"
         }
     }
+    /**
+        Кнопка для сохранения задачи
+     */
     @IBOutlet weak var addButton: UIButton! {
         didSet {
             addButton.clipsToBounds = true
@@ -66,9 +83,18 @@ class TaskCardCreatorViewController: UIViewController {
             addButton.accessibilityIdentifier = "AddButton"
         }
     }
+    /**
+        Флаг для определения новая задача или нет
+     */
     var flag: Bool = false
+    /**
+        Индекс старой задачи в таблице
+     */
     var index: IndexPath!
     
+    /**
+        Делегат контроллера, где хранятся задачи
+     */
     weak var delegate: TodoViewController?
     
     override func viewDidLoad() {
