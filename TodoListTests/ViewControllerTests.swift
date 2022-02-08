@@ -10,14 +10,14 @@ import XCTest
 
 class ViewControllerTests: XCTestCase {
     
-    var sut: ViewController!
+    var sut: TodoViewController!
     let db = DataProvider.shared
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! ViewController)
+        sut = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! TodoViewController)
         
         sut.loadViewIfNeeded()
         db.deleteAllTasks()

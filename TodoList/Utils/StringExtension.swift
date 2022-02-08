@@ -42,4 +42,8 @@ extension String {
     var localized: String {
         NSLocalizedString(self, comment: "")
     }
+    
+    subscript(_ key: Int) -> Character {
+        get { self[self.index(self.startIndex, offsetBy: key)] }
+    }
 }

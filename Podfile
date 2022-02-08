@@ -5,6 +5,7 @@ target 'TodoList' do
   
   pod 'RealmSwift', :modular_headers => true
   pod 'Realm', :modular_headers => true
+  pod 'Charts', :modular_headers => true
 
 end
 
@@ -12,6 +13,7 @@ target 'TodoListTests' do
   
   pod 'RealmSwift', :modular_headers => true
   pod 'Realm', :modular_headers => true
+  pod 'Charts', :modular_headers => true
 
 end
 
@@ -19,6 +21,7 @@ target 'TodoListUITests' do
   
   pod 'RealmSwift', :modular_headers => true
   pod 'Realm', :modular_headers => true
+  pod 'Charts', :modular_headers => true
 
 end
 

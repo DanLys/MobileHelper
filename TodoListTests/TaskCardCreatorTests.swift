@@ -11,14 +11,14 @@ import XCTest
 class TaskCardCreatorTests: XCTestCase {
     
     var sut: TaskCardCreatorViewController!
-    var sut2: ViewController!
+    var sut2: TodoViewController!
     let db = DataProvider.shared
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut2 = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! ViewController)
+        sut2 = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! TodoViewController)
         sut2.loadViewIfNeeded()
         
         sut = TaskCardCreatorViewController()

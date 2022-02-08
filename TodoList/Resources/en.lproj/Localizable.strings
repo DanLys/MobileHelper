@@ -9,3 +9,11 @@
 "name" = "Name:";
 "add" = "Add";
 "update" = "Update";
+"busy" = "Busy";
+"free" = "Free";
+"error getting memory info" = "Error getting memory info";
+"gb" = "Gb";
+"settings" = "Settings";
+"batteryState" = "Battery state:";
+"baseInfo" = "Info";
+"todo" = "Todo";
