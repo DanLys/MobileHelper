@@ -69,9 +69,11 @@ class TaskCardCreatorViewController: UIViewController {
     var flag: Bool = false
     var index: IndexPath!
     
-    weak var delegate: ViewController?
+    weak var delegate: TodoViewController?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         
         self.view.addGestureRecognizer(tap)

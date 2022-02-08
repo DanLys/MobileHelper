@@ -8,12 +8,12 @@
 import UIKit
 
 /**
-    Контроллер отвечающий за главный экран
+    Контроллер отвечающий за экран с задачами
  
     - plusButton:  *UIButton* кнопка для добавление задачи
     - tasks: массив *TaskDTO*, который хранит задачи
  */
-class ViewController: UIViewController {
+class TodoViewController: UIViewController {
 
     @IBOutlet weak var plusButton: UIButton! {
         didSet {
@@ -144,7 +144,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: расширения для таблицы
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension TodoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         tasksMap.count
