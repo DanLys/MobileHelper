@@ -16,8 +16,7 @@ class ViewControllerTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! TodoViewController)
+        sut = TodoViewController()
         
         sut.loadViewIfNeeded()
         db.deleteAllTasks()

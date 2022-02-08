@@ -17,8 +17,7 @@ class TaskCardCreatorTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut2 = (storyboard.instantiateViewController(withIdentifier: "ToDoMainViewController") as! TodoViewController)
+        sut2 = TodoViewController()
         sut2.loadViewIfNeeded()
         
         sut = TaskCardCreatorViewController()

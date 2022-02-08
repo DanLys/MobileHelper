@@ -19,8 +19,12 @@ class TodoListUITests: XCTestCase {
     }
     
     func testAddTwoTask() {
+        
         app.launchArguments = ["Test-empty-app"]
         app.launch()
+        
+        app.tabBars["Tab Bar"].buttons["Todo"].tap()
+        
         
         let plusbuttonButton = app/*@START_MENU_TOKEN@*/.buttons["PlusButton"]/*[[".buttons[\"plus\"]",".buttons[\"PlusButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         plusbuttonButton.tap()
@@ -93,6 +97,8 @@ class TodoListUITests: XCTestCase {
         app.launchArguments = ["Test-empty-app", "Test-with-one-task"]
         app.launch()
         
+        app.tabBars["Tab Bar"].buttons["Todo"].tap()
+        
         app.tables["TaskTable"].cells["cell:::withIndex(0:0)"].children(matching: .staticText).matching(identifier: "Test").element(boundBy: 0).tap()
         app.textViews["NameFieldForCreator"].tap()
         
@@ -134,6 +140,8 @@ class TodoListUITests: XCTestCase {
         app.launchArguments = ["Test-empty-app", "Test-with-two-task"]
         app.launch()
         
+        app.tabBars["Tab Bar"].buttons["Todo"].tap()
+        
         let cells = app.tables["TaskTable"].cells
         cells["cell:::withIndex(0:0)"].swipeLeft()
         
@@ -144,6 +152,8 @@ class TodoListUITests: XCTestCase {
     func testAddEmptyTask() {
         app.launchArguments = ["Test-empty-app"]
         app.launch()
+        
+        app.tabBars["Tab Bar"].buttons["Todo"].tap()
 
         app/*@START_MENU_TOKEN@*/.buttons["PlusButton"]/*[[".buttons[\"plus\"]",".buttons[\"PlusButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app/*@START_MENU_TOKEN@*/.buttons["AddButton"]/*[[".buttons[\"ADD\"]",".buttons[\"AddButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
